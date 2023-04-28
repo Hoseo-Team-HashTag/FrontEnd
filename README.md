@@ -14,7 +14,7 @@ yarn create vuetify
 npm install
 ```
 
-### install postcss-env
+### install postcss-env (css 전처리기 오류: postcss install 후, postcss.config.js 설정)
 ```
 npm install postcss-preset-env --save-dev
 ```
@@ -56,7 +56,7 @@ Sass use
 
 
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development (서버 실행)
 
 ```
 # yarn
