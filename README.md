@@ -2,14 +2,16 @@
 
 ## Project setup
 
-```
+
 # yarn (create vuetify3 is only to use yarn)
+```
 yarn
 yarn create vuetify
+```
 
 # npm
+```
 npm install
-
 ```
 
 ### install postcss-env
