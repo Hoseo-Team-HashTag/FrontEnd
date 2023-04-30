@@ -66,7 +66,31 @@ Sass use
 
 - eslint 지우기 (주석처리)
 
+### fontawesome 설정: 따로 설치 필요없음
+```javascript
+import { createVuetify } from 'vuetify';
+import { aliases, fa } from 'vuetify/iconsets/fa';
+import { mdi } from 'vuetify/iconsets/mdi';
 
+/* 기본셋을 fontawesome으로 설정, 사용방법 예시
+<v-icon icon="fas fa-plus" /> // This renders a FontAwesome icon
+<v-icon icon="mdi:mdi-minus" /> // This renders a MDI icon */
+export default createVuetify({
+  icons: {
+    defaultSet: 'fa',
+    aliases,
+    sets: {
+      fa,
+      mdi,
+    },
+  },
+});
+```
+
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 
 ### Compiles and hot-reloads for development (서버 실행)
 
