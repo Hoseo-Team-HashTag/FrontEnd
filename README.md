@@ -2,18 +2,97 @@
 
 ## Project setup
 
+### 주의사항
+
+- Vue 버전과 Vuetify 버전이 충돌할 수 있음
+- Vue3 버전 ==> Vuetify3 버전을 설치해야함 
+
+# yarn , 아예 처음 프로젝트 생성할 때 (버전 선택 유의)
 ```
-# yarn
 yarn
+yarn create vuetify
+```
+or Vue 프로젝트에 추가할 때 (버전 선택 유의)
+```
+vue add vuetify
+```
 
 # npm
+```
 npm install
-
-# pnpm
-pnpm install
 ```
 
-### Compiles and hot-reloads for development
+### install postcss-env (css 전처리기 오류: postcss install 후, postcss.config.js 설정)
+```
+npm install postcss-preset-env --save-dev
+```
+
+### create postcss.config.js
+```javascript
+module.exports = {
+  plugins: {
+    'postcss-preset-env': {
+      // options
+    },
+  },
+};
+
+```
+
+### install extension
+```
+vetur
+html css support
+vue 3 snippets
+```
+
+### module scss(sass)
+
+Sass install
+```
+npm install sass
+npm install sass-loader@10
+```
+
+Sass use
+```scss
+/* vue 템플릿의 <style>에서 사용한다. */
+<style lang="scss">
+	...CSS 정의
+</style>
+```
+
+### 프로젝트 진행을 위해 package.json 설정
+
+- eslint 지우기 (주석처리)
+
+### fontawesome 설정: 따로 설치 필요없음
+```javascript
+import { createVuetify } from 'vuetify';
+import { aliases, fa } from 'vuetify/iconsets/fa';
+import { mdi } from 'vuetify/iconsets/mdi';
+
+/* 기본셋을 fontawesome으로 설정, 사용방법 예시
+<v-icon icon="fas fa-plus" /> // This renders a FontAwesome icon
+<v-icon icon="mdi:mdi-minus" /> // This renders a MDI icon */
+export default createVuetify({
+  icons: {
+    defaultSet: 'fa',
+    aliases,
+    sets: {
+      fa,
+      mdi,
+    },
+  },
+});
+```
+
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+### Compiles and hot-reloads for development (서버 실행)
 
 ```
 # yarn
@@ -22,8 +101,6 @@ yarn dev
 # npm
 npm run dev
 
-# pnpm
-pnpm dev
 ```
 
 ### Compiles and minifies for production
@@ -35,8 +112,6 @@ yarn build
 # npm
 npm run build
 
-# pnpm
-pnpm build
 ```
 
 ### Lints and fixes files
@@ -48,10 +123,6 @@ yarn lint
 # npm
 npm run lint
 
-# pnpm
-pnpm lint
 ```
 
-### Customize configuration
 
-See [Configuration Reference](https://vitejs.dev/config/).
