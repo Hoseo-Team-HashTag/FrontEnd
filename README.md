@@ -2,11 +2,19 @@
 
 ## Project setup
 
+### 주의사항
 
-# yarn (create vuetify3 is only to use yarn)
+- Vue 버전과 Vuetify 버전이 충돌할 수 있음
+- Vue3 버전 ==> Vuetify3 버전을 설치해야함 
+
+# yarn , 아예 처음 프로젝트 생성할 때 (버전 선택 유의)
 ```
 yarn
 yarn create vuetify
+```
+or Vue 프로젝트에 추가할 때 (버전 선택 유의)
+```
+vue add vuetify
 ```
 
 # npm
