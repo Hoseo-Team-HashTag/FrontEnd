@@ -54,6 +54,10 @@ Sass use
 </style>
 ```
 
+### 프로젝트 진행을 위해 package.json 설정
+
+- eslint 지우기 (주석처리)
+
 
 
 ### Compiles and hot-reloads for development (서버 실행)
