@@ -3,20 +3,20 @@
   <SideBar />
   <section class="section">
     <div class="container">
-      <h2 class="subtitle has-text-centered">
+      <h2 id="cal__navbar" class="subtitle has-text-centered">
         <button
-          class="button is-small is-primary is-outlined mr-5"
+          class="button is-small is-primary is-outlined mr-1"
           @click="calendarData(-1)"
         >
           &lt;
         </button>
-        {{ year }}년 {{ month }}월
         <button
-          class="button is-small is-primary is-outlined ml-5"
+          class="button is-small is-primary is-outlined ml-1"
           @click="calendarData(1)"
         >
           &gt;
         </button>
+        <p style="padding-left: 16px">{{ year }}년 {{ month }}월</p>
         <!-- DialogModal -->
         <DialogModal />
       </h2>

@@ -1,9 +1,13 @@
 <template>
   <v-row justify="space-around">
     <v-col cols="auto">
-      <v-dialog transition="dialog-bottom-transition" width="auto">
+      <v-dialog
+        v-model="dialog"
+        transition="dialog-bottom-transition"
+        width="auto"
+      >
         <template v-slot:activator="{ props }">
-          <v-btn color="var(--color-nav-green)" v-bind="props">일정 추가</v-btn>
+          <v-btn color="var(--color-nav-green)" v-bind="props">일정추가</v-btn>
         </template>
         <template v-slot:default="{ isActive }">
           <!-- v-card: 버튼 클릭 시 나오는 modal창 -->
@@ -75,22 +79,22 @@ export default {
   //   background-color: var(--color-light-white);
 }
 
-#modal__item {
+.modal__item {
   background-color: var(--color-light-white);
   margin: 12px;
   padding: 8px;
 }
 
-#modal__item::placeholder {
+.modal__item::placeholder {
   //   color: red;
 }
 
-#modal__btn {
+.modal__btn {
   background-color: var(--color-nav-green);
   margin: 16px;
 }
 
-#modal__btn:hover {
+.modal__btn:hover {
   background-color: var(--color-light-green);
 }
 </style>
