@@ -96,6 +96,39 @@ export default createVuetify({
 ### 파일명을 2단어 이상으로 작성해야 하는 이유?
 - 1단어로 작성하게 되면 나중에 HTML 태그와 혼동이 일어날 수도 있고 Vue의 스타일 가이드에서는 2가지 단어를 조합해서 만들라고 제안을 하고 있다.
 
+## 컴포넌트 불러오기
+
+### App.vue에서 GreetingUser 컴포넌트를 불러오는 방법이다.
+```vue.js
+import GreetingUser from './components/GreetingUser.vue';
+```
+- 스크립트 태그 안에 최상단에 import '컴포넌트 이름' from '경로';를 작성하면 된다.
+컴포넌트 이름은 원하는 것으로 작성해도 되지만 대문자 카멜케이스 규칙을 지켜주는 것이 좋다.
+vue파일인 경우 확장자 .vue를 생략해도 된다.
+```vue.js
+<template>
+  <div>
+    <GreetingUser />
+  </div>
+</template>
+```
+- 이제 템플릿 태그 안에 import한 GreetingUser를 태그처럼 작성해줄 수 있다. 현재 import만 해온 상태로 컴포넌트 태그를 사용했기 때문에 에러가 발생할 것이다. 템플릿 태그안에서 import한 컴포넌트를 사용하기 위해서는 등록이 필요하다.
+
+## 컴포넌트 등록하기
+- import 후 등록하고 사용해야 한다.
+```
+export default {
+  name: 'App',
+  components: {
+    GreetingUser,
+  },
+  data() {
+    return {};
+  },
+};
+```
+- components 오브젝트 안에 key : value 형태로 import한 컴포넌트를 등록해주면 된다.
+GreetingUser : GreetingUser 형태로 작성할 수 있는데 key와 value 명칭이 동일하면 하나로 생략해서 작성할 수 있다. (ES6 문법)
 
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
