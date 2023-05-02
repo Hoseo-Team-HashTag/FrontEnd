@@ -96,6 +96,14 @@ export default createVuetify({
 });
 ```
 
+## git
+
+### git clone
+- git을 사용하다 브랜치 전체를 clone하지 않고 특정 브랜치 하나만 clone하는 것이 가능하다. 특히 브랜치가 많은 경우 이 방법을 사용할 수 있다.
+```
+git clone -b {branch_name} --single-branch {저장소 URL}
+```
+
 # Vue tutorials
 - 구글링 + 공식문서 + 개발자velog 참고
 - 공식문서로 먼저 기본기 채우기
