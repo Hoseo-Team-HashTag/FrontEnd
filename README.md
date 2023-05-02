@@ -47,6 +47,14 @@ html css support
 vue 3 snippets
 ```
 
+### install vue-router
+- vuetify 설치 했을 땐 router 자동 설치됨.
+- 기본 vue 프로젝트는 설치 필요.
+```
+npm install vue-router
+```
+https://v3.router.vuejs.org/kr/installation.html
+
 ### module scss(sass)
 
 Sass install
