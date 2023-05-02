@@ -2,7 +2,7 @@
   <v-navigation-drawer expand-on-hover rail style="background-color: #c7f29b">
     <v-list>
       <v-list-item
-        prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
+        prepend-icon="mdi:mdi-account-circle"
         title="Guest"
         subtitle="guest001@gmail.com"
       ></v-list-item>
