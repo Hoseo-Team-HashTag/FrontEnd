@@ -116,7 +116,7 @@ vue파일인 경우 확장자 .vue를 생략해도 된다.
 
 ## 컴포넌트 등록하기
 - import 후 등록하고 사용해야 한다.
-```
+```vue.js
 export default {
   name: 'App',
   components: {
