@@ -49,11 +49,11 @@ vue 3 snippets
 
 ### install vue-router
 - vuetify 설치 했을 땐 router 자동 설치됨.
-- 기본 vue 프로젝트는 설치 필요.
+- 기본 vue 프로젝트는 설치 필요. (공식문서 참고해서 진행 권장)
 ```
 npm install vue-router
 ```
-https://v3.router.vuejs.org/kr/installation.html
+https://v3.router.vuejs.org/kr/installation.html (공식문서)
 
 ### module scss(sass)
 
