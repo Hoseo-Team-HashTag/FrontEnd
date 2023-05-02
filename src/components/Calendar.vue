@@ -1,4 +1,6 @@
 <template>
+  <!-- Sidebar -->
+  <SideBar />
   <section class="section">
     <div class="container">
       <h2 class="subtitle has-text-centered">
@@ -15,6 +17,8 @@
         >
           &gt;
         </button>
+        <!-- DialogModal -->
+        <DialogModal />
       </h2>
       <!-- table 생성 -->
       <table class="table has-text-centered is-fullwidth">
@@ -46,7 +50,17 @@
 </template>
 
 <script>
+import SideBar from './SideBar.vue';
+import DialogModal from './DialogModal.vue';
+
 export default {
+  name: 'CalendarView',
+  components: {
+    SideBar,
+    DialogModal,
+  },
+
+  // Calendar
   data() {
     return {
       days: [

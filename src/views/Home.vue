@@ -31,4 +31,9 @@
   </body>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+body {
+  background: url('@/assets/background-green.png') center/cover no-repeat;
+  height: 100%;
+}
+</style>

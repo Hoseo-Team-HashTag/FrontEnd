@@ -12,7 +12,7 @@
 
 /* settings.scss */
 
-// 이 파일은 vue.config.js 에 모듈화 했음 = 따로 import 필요없음
+// 이 파일은 vite.config.js 에 모듈화 했음 = 따로 import 필요없음
 // @import "@/styles/파일명"; 이런식으로 사용가능
 
 // 이런식으로 변수선언해서 사용 가능. 예시임
@@ -40,21 +40,25 @@ $color-nav-purple: #9c8dbd;
   --color-light-purple: #e7b9ff;
   --color-purple: #8876b3;
   --color-green: #82bf56;
-  --color-depp-green: #5aa637;
+  --color-deep-green: #5aa637;
   --color-light-green: #c7f29b;
   --color-nav-green: #a8d977;
+
   /* Font size */
   --font-large: 48px;
   --font-medium: 28px;
   --font-regular: 18px;
   --font-small: 16px;
   --font-micro: 14px;
+
   /* Font weight */
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
+
   /* Size */
   --size-border-radius: 4px;
+
   /* Animation */
   --animation-duration: 300ms;
 }
@@ -66,7 +70,7 @@ $color-nav-purple: #9c8dbd;
 }
 
 html {
-  background: url('@/assets/background-green.png') center/cover no-repeat;
+  // background: url('@/assets/background-green.png') center/cover no-repeat;
   height: 100%;
 }
 
@@ -213,7 +217,7 @@ footer {
 #home {
   // background: url('@/assets/background.png') center/cover no-repeat;
   padding: 40px;
-  padding-top: 160px;
+  padding-top: 100px;
   /* text-align: 중앙으로 */
   text-align: center;
 }
@@ -276,7 +280,7 @@ footer {
 // loginForm
 #loginForm {
   padding: 16px;
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 .loginForm__text {
