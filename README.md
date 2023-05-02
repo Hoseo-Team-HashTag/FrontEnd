@@ -99,7 +99,8 @@ export default createVuetify({
 # Vue tutorials
 - 구글링 + 공식문서 + 개발자velog 참고
 - 공식문서로 먼저 기본기 채우기
-https://vuejs.org (vue 공식문서)
+
+https://vuejs.org (vue 공식문서) <br>
 https://velog.io/@reasonz/2022.06.11-Vue-component-컴포넌트-만들고-불러오기-props-사용-및-주의사항 (개발자 velog)
 
 ## 컴포넌트 만들기 규칙
