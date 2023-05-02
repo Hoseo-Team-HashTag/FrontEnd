@@ -96,6 +96,12 @@ export default createVuetify({
 });
 ```
 
+# Vue tutorials
+- 구글링 + 공식문서 + 개발자velog 참고
+- 공식문서로 먼저 기본기 채우기
+https://vuejs.org (vue 공식문서)
+https://velog.io/@reasonz/2022.06.11-Vue-component-컴포넌트-만들고-불러오기-props-사용-및-주의사항 (개발자 velog)
+
 ## 컴포넌트 만들기 규칙
 - 의미있느 네이밍
 - 하나의 단어가 아닌 2가지 단어가 조합된 형태로 작성하는 것이 좋다.
