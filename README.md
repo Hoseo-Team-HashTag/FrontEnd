@@ -154,6 +154,11 @@ export default {
 - components 오브젝트 안에 key : value 형태로 import한 컴포넌트를 등록해주면 된다.
 GreetingUser : GreetingUser 형태로 작성할 수 있는데 key와 value 명칭이 동일하면 하나로 생략해서 작성할 수 있다. (ES6 문법)
 
+## JS로 router 이용해서 페이지 이동시키는 방법
+```vue.js
+this.$router.push('/Home');
+```
+
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 ## 서버 실행
