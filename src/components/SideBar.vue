@@ -19,27 +19,27 @@
       ></v-list-item>
       <v-list-item
         prepend-icon="fas fa-plus"
-        title="일정 추가"
-        value="일정 추가"
+        title="추가"
+        value="추가"
         @click="showDialog = true"
       ></v-list-item>
     </v-list>
-    <DialogModal v-model="dialog" />
+    <!-- <DialogModal v-model="dialog" /> -->
     <!-- <DialogModal v-if="showDialog" @closeDialog="showDialog = false" /> -->
   </v-navigation-drawer>
 </template>
 
 <script>
-import DialogModal from './DialogModal.vue';
+// import DialogModal from './DialogModal.vue';
 
 export default {
   name: 'SideBar',
   components: {
-    DialogModal,
+    // DialogModal,
   },
   data() {
     return {
-      dialog: false,
+      // showDialog: false,
     };
   },
 };

@@ -5,10 +5,11 @@
       <v-app-bar flat style="background-color: #a8d977">
         <v-app-bar-title>
           <v-icon
-            icon="fas fa-regular fa-calendar"
-            color="var(--color-deep-green)"
+            icon="fas fa-regular fa-face-grin-squint-tears"
+            color="var(--color-white)"
+            style="margin: 8px"
           />
-          HappyTime
+          <span class="happytime__title">HappyTime</span>
         </v-app-bar-title>
         <v-spacer>
           <router-link to="/" class="navbar__menu__item">Home</router-link>
@@ -31,4 +32,10 @@
 import 'bulma/css/bulma.css';
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.happytime__title {
+  color: var(--color-white);
+  font-size: var(--font-medium);
+  margin: 6px;
+}
+</style>

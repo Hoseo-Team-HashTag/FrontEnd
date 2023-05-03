@@ -12,7 +12,10 @@
         <template v-slot:default="{ isActive }">
           <!-- v-card: 버튼 클릭 시 나오는 modal창 -->
           <v-card class="rounded-lg">
-            <v-toolbar color="green" title="일정 추가"></v-toolbar>
+            <v-toolbar
+              color="var(--color-nav-green)"
+              title="일정 추가"
+            ></v-toolbar>
             <!-- modal창 내부 items -->
             <v-card-text>
               <div id="modal" class="text-h4 pa-4 rounded-lg">
@@ -79,22 +82,22 @@ export default {
   //   background-color: var(--color-light-white);
 }
 
-.modal__item {
+#modal__item {
   background-color: var(--color-light-white);
   margin: 12px;
   padding: 8px;
 }
 
-.modal__item::placeholder {
+#modal__item::placeholder {
   //   color: red;
 }
 
-.modal__btn {
+#modal__btn {
   background-color: var(--color-nav-green);
   margin: 16px;
 }
 
-.modal__btn:hover {
+#modal__btn:hover {
   background-color: var(--color-light-green);
 }
 </style>
