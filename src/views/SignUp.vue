@@ -88,6 +88,8 @@ export default {
       ) {
         // 로그인 처리
         console.log(this.userEmail, this.userPw, this.userName);
+      } else {
+        alert('로그인 실패!!');
       }
     },
   },
