@@ -47,7 +47,9 @@
         /><br />
         <div v-if="!nameValid">이름을 입력해주세요.</div>
         <a href="/PwPage" class="">비밀번호를 잊어버리셨나요?</a><br />
-        <button class="loginForm__button" value="">생성</button>
+        <button v-if="isFormValid" class="loginForm__button" value="">
+          생성
+        </button>
       </form>
     </section>
   </body>
@@ -77,15 +79,16 @@ export default {
     nameValid() {
       return this.userName !== '';
     },
+    // loginForm에 모든 값들이 정상적으로 들어갔을 경우
+    isFormValid() {
+      return (
+        this.emailValid && this.pwValid && this.checkPwValid && this.nameValid
+      );
+    },
   },
   methods: {
     submitForm() {
-      if (
-        this.emailValid &&
-        this.pwValid &&
-        this.checkPwValid &&
-        this.nameValid
-      ) {
+      if (this.isFormValid) {
         // 로그인 처리
         console.log(this.userEmail, this.userPw, this.userName);
       } else {
