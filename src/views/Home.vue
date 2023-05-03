@@ -83,6 +83,7 @@ export default {
               this.userPW = '';
             } else if (res.data.loginResult == 0) {
               alert('로그인 성공');
+              this.$router.push('/Calendar');
             } else if (res.data.loginResult == -1) {
               alert('backend error: SQL err');
             } else {

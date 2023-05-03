@@ -105,6 +105,7 @@ export default {
               alert('backend error: SQL err');
             } else if (res.data.signUpResult == 0) {
               alert('회원가입 성공');
+              this.$router.push('/Home');
             } else {
               alert('backend error: err');
             }
