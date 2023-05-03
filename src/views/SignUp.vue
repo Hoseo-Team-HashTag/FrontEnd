@@ -122,7 +122,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .invalid {
   border: 1px solid red;
 }
