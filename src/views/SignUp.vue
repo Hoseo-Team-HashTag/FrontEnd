@@ -15,7 +15,7 @@
         <div v-if="!emailValid">이메일 주소를 올바르게 입력해주세요.</div>
         <input
           id="userPw"
-          v-model="userPw"
+          v-model="userPW"
           type="password"
           placeholder="8자리 이상의 비밀번호"
           minlength="8"
@@ -26,7 +26,7 @@
         <div v-if="!pwValid">비밀번호를 8자리 이상 입력해주세요.</div>
         <input
           id="checkPw"
-          v-model="checkPw"
+          v-model="checkPW"
           type="password"
           placeholder="비밀번호 확인"
           minlength="8"
@@ -60,8 +60,8 @@ export default {
   data() {
     return {
       userEmail: '',
-      userPw: '',
-      checkPw: '',
+      userPW: '',
+      checkPW: '',
       userName: '',
     };
   },
@@ -71,10 +71,10 @@ export default {
       return emailPattern.test(this.userEmail);
     },
     pwValid() {
-      return this.userPw.length >= 8;
+      return this.userPW.length >= 8;
     },
     checkPwValid() {
-      return this.checkPw === this.userPw;
+      return this.checkPW === this.userPW;
     },
     nameValid() {
       return this.userName !== '';
@@ -88,12 +88,33 @@ export default {
   },
   methods: {
     submitForm() {
+      // 로그인폼 유효성 검사
       if (this.isFormValid) {
-        // 로그인 처리
-        console.log(this.userEmail, this.userPw, this.userName);
-      } else {
-        alert('로그인 실패!!');
+        axios
+          .post('http://127.0.0.1:3000/accounts', {
+            userEmail: this.userEmail,
+            userPW: this.userPW,
+            userName: this.userName,
+          })
+          .then(res => {
+            if (res.data.signUpResult == 1) {
+              alert('중복: 이미 존재하는 이메일 입니다.');
+            } else if (res.data.signUpResult == -1) {
+              alert('backend error: SQL err');
+            } else if (res.data.signUpResult == 0) {
+              alert('회원가입 성공');
+            } else {
+              alert('backend error: err');
+            }
+          });
       }
+      // if (this.isFormValid) {
+      //   // 로그인 처리
+      //   console.log(this.userEmail, this.userPw, this.userName);
+
+      // } else {
+      //   alert('로그인 실패!!');
+      // }
     },
   },
 };
