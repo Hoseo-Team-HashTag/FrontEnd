@@ -15,6 +15,10 @@ import { registerPlugins } from '@/plugins';
 
 import router from './router/index';
 
+import Vue from 'vue';
+import axios from 'axios';
+Vue.prototype.$http = axios;
+
 const app = createApp(App).use(router);
 
 registerPlugins(app);
