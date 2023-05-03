@@ -56,6 +56,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -91,7 +93,7 @@ export default {
       // 로그인폼 유효성 검사
       if (this.isFormValid) {
         axios
-          .post('http://127.0.0.1:3000/accounts', {
+          .post('http://127.0.0.1:3000/accounts/signUp', {
             userEmail: this.userEmail,
             userPW: this.userPW,
             userName: this.userName,
