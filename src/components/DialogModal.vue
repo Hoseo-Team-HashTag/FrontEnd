@@ -7,7 +7,12 @@
         width="auto"
       >
         <template v-slot:activator="{ props }">
-          <v-btn color="var(--color-nav-green)" v-bind="props">일정추가</v-btn>
+          <v-btn
+            class="dialog__addBtn"
+            color="var(--color-nav-green)"
+            v-bind="props"
+            >일정추가</v-btn
+          >
         </template>
         <template v-slot:default="{ isActive }">
           <!-- v-card: 버튼 클릭 시 나오는 modal창 -->
@@ -99,5 +104,9 @@ export default {
 
 #modal__btn:hover {
   background-color: var(--color-light-green);
+}
+
+.dialog__addBtn {
+  font-size: var(--font-small);
 }
 </style>

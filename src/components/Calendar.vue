@@ -31,13 +31,15 @@
               v-for="(day, secondIdx) in date"
               :key="secondIdx"
               :class="{
-                'has-text-info-dark': idx === 0 && day >= lastMonthStart,
-                'has-text-danger':
+                'has-text-grey-light': idx === 0 && day >= lastMonthStart,
+                'has-text-grey-lighter':
                   dates.length - 1 === idx && nextMonthStart > day,
-                'has-text-primary':
+                'has-text-success':
                   day === today &&
                   month === currentMonth &&
                   year === currentYear,
+                'has-text-link': secondIdx === 6, // 토요일 텍스트 색상
+                'has-text-danger': secondIdx === 0, // 일요일 텍스트 색상
               }"
             >
               {{ day }}
