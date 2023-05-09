@@ -39,7 +39,6 @@
 import axios from 'axios';
 
 export default {
-  name: 'NewPassword',
   data() {
     return {
       userPW: '',
@@ -67,11 +66,11 @@ export default {
               userPW: this.userPW,
             })
             .then(res => {
-              if (res.data.emailSystemResult == 1) {
+              if (res.data.resetPasswordResult == 1) {
                 alert('이미 사용중인 비밀번호 입니다.');
-              } else if (res.data.signUpResult == -1) {
+              } else if (res.data.resetPasswordResult == -1) {
                 alert('backend error: SQL err');
-              } else if (res.data.signUpResult == 0) {
+              } else if (res.data.resetPasswordResult == 0) {
                 alert('비밀번호 변경 성공!');
                 this.$router.push('/');
               } else {
