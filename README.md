@@ -1,14 +1,14 @@
 # base
 - ( = ) 좌측 위 메뉴 토클버튼 활용
 
-## Project setup
+## * Project setup
 
 ### 주의사항
 
 - Vue 버전과 Vuetify 버전이 충돌할 수 있음
 - Vue3 버전 ==> Vuetify3 버전을 설치해야함 
 
-## 프로젝트 생성 방법
+## * 프로젝트 생성 방법
 
 ### yarn , 아예 처음 프로젝트 생성할 때 (버전 선택 유의)
 ```
@@ -33,7 +33,7 @@ yarn
 npm run dev
 ```
 
-## postcss-env err 날 경우
+## * postcss-env err 날 경우
 
 ### install postcss-env (css 전처리기 오류: postcss install 후, postcss.config.js 설정)
 ```
@@ -52,14 +52,14 @@ module.exports = {
 
 ```
 
-### install extension
+## * install extension
 ```
 vetur
 html css support
 vue 3 snippets
 ```
 
-### install vue-router
+## * install vue-router
 - vuetify 설치 했을 땐 router 자동 설치됨.
 - 기본 vue 프로젝트는 설치 필요. (공식문서 참고해서 진행 권장)
 ```
@@ -67,7 +67,7 @@ npm install vue-router
 ```
 https://v3.router.vuejs.org/kr/installation.html (공식문서)
 
-### module scss(sass)
+## * module scss(sass) install
 
 Sass install
 ```
@@ -83,11 +83,11 @@ Sass use
 </style>
 ```
 
-### 프로젝트 진행을 위해 package.json 설정
+## * 프로젝트 진행을 위해 package.json 설정
 
 - eslint 지우기 (주석처리)
 
-### fontawesome 설정: 따로 설치 필요없음
+## * fontawesome 설정: 따로 설치 필요없음
 ```javascript
 import { createVuetify } from 'vuetify';
 import { aliases, fa } from 'vuetify/iconsets/fa';
