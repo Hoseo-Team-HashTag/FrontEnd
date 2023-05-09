@@ -8,6 +8,8 @@
 - Vue 버전과 Vuetify 버전이 충돌할 수 있음
 - Vue3 버전 ==> Vuetify3 버전을 설치해야함 
 
+## 프로젝트 생성 방법
+
 ### yarn , 아예 처음 프로젝트 생성할 때 (버전 선택 유의)
 ```
 yarn
@@ -18,9 +20,17 @@ or Vue 프로젝트에 추가할 때 (버전 선택 유의)
 vue add vuetify
 ```
 
-### npm
+## clone 후 셋팅
+
+### install
 ```
 npm install
+yarn
+```
+
+### 서버 실행
+```
+npm run dev
 ```
 
 ### install postcss-env (css 전처리기 오류: postcss install 후, postcss.config.js 설정)
