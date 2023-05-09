@@ -33,6 +33,8 @@ yarn
 npm run dev
 ```
 
+## postcss-env err 날 경우
+
 ### install postcss-env (css 전처리기 오류: postcss install 후, postcss.config.js 설정)
 ```
 npm install postcss-preset-env --save-dev
