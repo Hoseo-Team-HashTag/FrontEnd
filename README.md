@@ -20,7 +20,7 @@ or Vue 프로젝트에 추가할 때 (버전 선택 유의)
 vue add vuetify
 ```
 
-## clone 후 셋팅
+## * clone 후 셋팅
 
 ### install
 ```
