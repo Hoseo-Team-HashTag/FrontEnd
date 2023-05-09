@@ -46,7 +46,6 @@ export default {
     pwSearchForm() {
       // pwSearchForm 유효성 검사
       if (this.isFormValid) {
-        console.log(this.userEmail);
         axios
           .post('http://127.0.0.1:3000/accounts/pwsearch', {
             userEmail: this.userEmail,
