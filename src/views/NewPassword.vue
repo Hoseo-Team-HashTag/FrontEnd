@@ -59,6 +59,7 @@ export default {
 
     methods: {
       newPwForm() {
+        // console.log(this.$route.prams.token);
         // newPwForm 유효성 검사
         if (this.isFormValid) {
           axios

@@ -29,7 +29,7 @@ const routes = [
     component: PwPage,
   },
   {
-    path: '/NewPassword',
+    path: '/NewPassword/:token',
     name: 'NewPassword',
     component: NewPassword,
   },
