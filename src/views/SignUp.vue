@@ -4,6 +4,7 @@
       <!-- 로그인폼 -->
       <form v-on:submit.prevent="submitForm" id="loginForm">
         <h2 class="home__description">회원가입</h2>
+        <!-- :class = "{ 요소: 조건 }" vue의 클래스 바인딩. 조건에 만족할 때 클래스를 동적으로 바꿀 수 있다. -->
         <input
           id="userEmail"
           v-model="userEmail"

@@ -5,6 +5,7 @@ import Home from '@/views/Home.vue';
 import Calendar from '@/components/Calendar';
 import SignUp from '@/views/SignUp';
 import PwPage from '@/views/PwPage';
+import NewPassword from '@/views/NewPassword';
 
 const routes = [
   {
@@ -26,6 +27,11 @@ const routes = [
     path: '/PwPage',
     name: 'PwPage',
     component: PwPage,
+  },
+  {
+    path: '/NewPassword',
+    name: 'NewPassword',
+    component: NewPassword,
   },
 ];
 
