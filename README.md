@@ -25,7 +25,11 @@ vue add vuetify
 ### install
 ```
 npm install
-yarn
+```
+
+### 종속성 에러 발생 시
+```
+npm install --legacy-peer-deps
 ```
 
 ### 서버 실행
