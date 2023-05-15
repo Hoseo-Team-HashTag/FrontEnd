@@ -2,53 +2,51 @@
   <!-- Sidebar -->
   <SideBar />
   <section class="section">
-    <div class="container">
-      <!-- cal 내부 navbar: < >, 현재날짜, 일정추가 버튼 -->
-      <h2 id="cal__navbar" class="subtitle has-text-centered">
-        <button
-          class="button is-small is-primary is-outlined mr-1"
-          @click="calendarData(-1)"
-        >
-          &lt;
-        </button>
-        <button
-          class="button is-small is-primary is-outlined ml-1"
-          @click="calendarData(1)"
-        >
-          &gt;
-        </button>
-        <p style="padding-left: 16px">{{ year }}년 {{ month }}월</p>
-        <!-- DialogModal: 일정추가버튼 -->
-        <DialogModal />
-      </h2>
-      <!-- table 생성 (has-text-centered) -->
-      <table class="table is-fullwidth">
-        <thead>
-          <th v-for="day in days" :key="day">{{ day }}</th>
-        </thead>
-        <tbody class="table is-bordered" style="height: 600px">
-          <tr v-for="(date, idx) in dates" :key="idx">
-            <td
-              v-for="(day, secondIdx) in date"
-              :key="secondIdx"
-              :class="{
-                'has-text-grey-light': idx === 0 && day >= lastMonthStart,
-                'has-text-grey-lighter':
-                  dates.length - 1 === idx && nextMonthStart > day,
-                'has-text-success':
-                  day === today &&
-                  month === currentMonth &&
-                  year === currentYear,
-                'has-text-link': secondIdx === 6, // 토요일 텍스트 색상
-                'has-text-danger': secondIdx === 0, // 일요일 텍스트 색상
-              }"
-            >
-              {{ day }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <!-- <div class="container"> -->
+    <!-- cal 내부 navbar: < >, 현재날짜, 일정추가 버튼 -->
+    <h2 id="cal__navbar" class="subtitle has-text-centered">
+      <button
+        class="button is-small is-primary is-outlined mr-1"
+        @click="calendarData(-1)"
+      >
+        &lt;
+      </button>
+      <button
+        class="button is-small is-primary is-outlined ml-1"
+        @click="calendarData(1)"
+      >
+        &gt;
+      </button>
+      <p style="padding-left: 16px">{{ year }}년 {{ month }}월</p>
+      <!-- DialogModal: 일정추가버튼 -->
+      <DialogModal />
+    </h2>
+    <!-- table 생성 (has-text-centered) -->
+    <table class="table is-fullwidth">
+      <thead>
+        <th v-for="day in days" :key="day">{{ day }}</th>
+      </thead>
+      <tbody class="table is-bordered" style="height: 600px">
+        <tr v-for="(date, idx) in dates" :key="idx">
+          <td
+            v-for="(day, secondIdx) in date"
+            :key="secondIdx"
+            :class="{
+              'has-text-grey-light': idx === 0 && day >= lastMonthStart,
+              'has-text-grey-lighter':
+                dates.length - 1 === idx && nextMonthStart > day,
+              'has-text-success':
+                day === today && month === currentMonth && year === currentYear,
+              'has-text-link': secondIdx === 6, // 토요일 텍스트 색상
+              'has-text-danger': secondIdx === 0, // 일요일 텍스트 색상
+            }"
+          >
+            {{ day }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- </div> -->
   </section>
 </template>
 
