@@ -6,13 +6,14 @@
         transition="dialog-bottom-transition"
         width="auto"
       >
-        <template v-slot:activator="{ props }">
+        <template v-slot:activator="{ on }">
           <v-btn
             class="dialog__addBtn"
             color="var(--color-nav-green)"
-            v-bind="props"
-            >일정추가</v-btn
+            v-on="on"
           >
+            일정추가
+          </v-btn>
         </template>
         <template v-slot:default="{ isActive }">
           <v-card class="rounded-lg">
@@ -22,47 +23,36 @@
             ></v-toolbar>
             <v-card-text>
               <div id="modal" class="text-h4 pa-4 rounded-lg">
+                <p>선택한 날짜: {{ formatDate(selectedDate) }}</p>
                 <input
                   id="modal__item"
                   type="text"
+                  v-model="title"
                   placeholder="제목"
                   style="width: 100%"
                 /><br />
-                <!-- date picker, time picker -->
-                <v-date-picker
-                  id="modal__item"
-                  v-model="selectedDate"
-                  placeholder="날짜 선택"
-                ></v-date-picker
-                ><br />
-                <v-time-picker
-                  id="modal__item"
-                  v-model="selectedTime"
-                  format="24hr"
-                  full-width
-                  placeholder="시간 선택"
-                ></v-time-picker
-                ><br />
                 <input
                   id="modal__item"
                   class="text-h5"
                   type="text"
+                  v-model="memo"
                   placeholder="일정 메모"
                   style="width: 100%"
                 />
               </div>
             </v-card-text>
             <v-card-actions class="justify-end">
-              <v-btn color="grey" variant="text" @click="isActive.value = false"
-                >취소</v-btn
-              >
+              <v-btn color="grey" variant="text" @click="dialog = false">
+                취소
+              </v-btn>
               <v-btn
                 id="modal__btn"
                 color="black"
                 variant="text"
-                @click="isActive.value = false"
-                >저장</v-btn
+                @click="saveEvent"
               >
+                저장
+              </v-btn>
             </v-card-actions>
           </v-card>
         </template>
@@ -78,8 +68,39 @@ export default {
     return {
       dialog: false,
       selectedDate: null,
-      selectedTime: null,
+      title: '',
+      memo: '',
     };
+  },
+  methods: {
+    openDialog() {
+      this.dialog = true;
+    },
+    formatDate(date) {
+      if (!date) {
+        return '날짜를 선택하세요';
+      }
+
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = new Date(date).toLocaleDateString('ko-KR', options);
+      return formattedDate;
+    },
+
+    saveEvent() {
+      const event = {
+        date: this.selectedDate ? new Date(this.selectedDate) : null,
+        title: this.title,
+        memo: this.memo,
+      };
+      console.log('Event:', event);
+      this.dialog = false;
+    },
+  },
+  props: {
+    selectedDate: {
+      type: Date,
+      default: null,
+    },
   },
 };
 </script>
