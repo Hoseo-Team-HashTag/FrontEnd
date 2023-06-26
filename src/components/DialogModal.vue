@@ -15,13 +15,11 @@
           >
         </template>
         <template v-slot:default="{ isActive }">
-          <!-- v-card: 버튼 클릭 시 나오는 modal창 -->
           <v-card class="rounded-lg">
             <v-toolbar
               color="var(--color-nav-green)"
               title="일정 추가"
             ></v-toolbar>
-            <!-- modal창 내부 items -->
             <v-card-text>
               <div id="modal" class="text-h4 pa-4 rounded-lg">
                 <input
@@ -30,18 +28,21 @@
                   placeholder="제목"
                   style="width: 100%"
                 /><br />
+                <!-- date picker, time picker -->
                 <v-date-picker
                   id="modal__item"
                   v-model="selectedDate"
                   placeholder="날짜 선택"
                 ></v-date-picker
                 ><br />
-                <input
+                <v-time-picker
                   id="modal__item"
-                  class="text-h5"
-                  type="text"
+                  v-model="selectedTime"
+                  format="24hr"
+                  full-width
                   placeholder="시간 선택"
-                /><br />
+                ></v-time-picker
+                ><br />
                 <input
                   id="modal__item"
                   class="text-h5"
@@ -51,7 +52,6 @@
                 />
               </div>
             </v-card-text>
-            <!-- actions-btn: 취소, 저장 버튼 -->
             <v-card-actions class="justify-end">
               <v-btn color="grey" variant="text" @click="isActive.value = false"
                 >취소</v-btn
@@ -78,6 +78,7 @@ export default {
     return {
       dialog: false,
       selectedDate: null,
+      selectedTime: null,
     };
   },
 };

@@ -33,6 +33,8 @@ import 'bulma/css/bulma.css';
 </script>
 
 <style lang="scss" scoped>
+@import 'vuetify/dist/vuetify.min.css';
+
 .happytime__title {
   color: var(--color-white);
   font-size: var(--font-medium);
