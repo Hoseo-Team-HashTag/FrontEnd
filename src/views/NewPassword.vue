@@ -56,32 +56,36 @@ export default {
     isFormValid() {
       return this.pwValid && this.checkPwValid;
     },
+  },
 
-    methods: {
-      newPwForm() {
-        // console.log(this.$route.prams.token);
-        // newPwForm 유효성 검사
-        if (this.isFormValid) {
-          axios
-            .post('http://localhost:3000/accounts/NewPassword', {
+  methods: {
+    newPwForm() {
+      // console.log(this.$route.prams.token);
+      // newPwForm 유효성 검사
+      if (this.isFormValid) {
+        axios
+          .post(
+            'http://127.0.0.1:3000/accounts/NewPassword/' +
+              this.$route.params.token,
+            {
               userPW: this.userPW,
-            })
-            .then(res => {
-              if (res.data.resetResult == 1) {
-                alert(
-                  '유효시간 경과하였거나 올바르지 않은 접근입니다. 요청하여 새로운 주소로 시도해주시기 바랍니다.',
-                );
-              } else if (res.data.resetPasswordResult == -1) {
-                alert('backend error: 서버 오류로 인한 전송 실패');
-              } else if (res.data.resetPasswordResult == 0) {
-                alert('초기화 성공!');
-                this.$router.push('/');
-              } else {
-                alert('backend error: err');
-              }
-            });
-        }
-      },
+            },
+          )
+          .then(res => {
+            if (res.data.resetResult == 1) {
+              alert(
+                '유효시간 경과하였거나 올바르지 않은 접근입니다. 요청하여 새로운 주소로 시도해주시기 바랍니다.',
+              );
+            } else if (res.data.resetResult == -1) {
+              alert('backend error: 서버 오류로 인한 전송 실패');
+            } else if (res.data.resetResult == 0) {
+              alert('초기화 성공!');
+              this.$router.push('/');
+            } else {
+              alert('backend error: err');
+            }
+          });
+      }
     },
   },
 };

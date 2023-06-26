@@ -30,17 +30,17 @@
                   placeholder="제목"
                   style="width: 100%"
                 /><br />
+                <v-date-picker
+                  id="modal__item"
+                  v-model="selectedDate"
+                  placeholder="날짜 선택"
+                ></v-date-picker
+                ><br />
                 <input
                   id="modal__item"
                   class="text-h5"
                   type="text"
-                  placeholder="date picker"
-                />
-                <input
-                  id="modal__item"
-                  class="text-h5"
-                  type="text"
-                  placeholder="date picker"
+                  placeholder="시간 선택"
                 /><br />
                 <input
                   id="modal__item"
@@ -77,6 +77,7 @@ export default {
   data() {
     return {
       dialog: false,
+      selectedDate: null,
     };
   },
 };
