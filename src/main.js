@@ -27,4 +27,5 @@ registerPlugins(app);
 app.mount('#app');
 
 // Axios / HTTP communication
+axios.defaults.withCredentials = true; // withCredentials 옵션 활성화
 app.config.globalProperties.$axios = axios;
