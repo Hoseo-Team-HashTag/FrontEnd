@@ -130,6 +130,12 @@ td:hover {
   background-color: var(--color-light-white);
 }
 
+// 이전달과 다음달 날짜는 흑백표시
+.has-text-grey-light,
+.has-text-grey-lighter {
+  background-color: var(--color-light-white);
+}
+
 footer {
   position: absolute;
   bottom: 0;
