@@ -175,9 +175,13 @@ export default {
       return dayIndex === 0;
     },
     openDialog(date) {
-      const selectedDate = new Date(this.year, this.month - 1, date + 1);
-      this.selectedDate = selectedDate.toISOString().split('T')[0];
-      this.$refs.dialogModal.openDialog();
+      const selectedDate = new Date(this.year, this.month - 1, date);
+      const year = selectedDate.getFullYear();
+      const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
+      const day = selectedDate.getDate().toString().padStart(2, '0');
+      this.selectedDate = `${year}-${month}-${day}`;
+      this.$refs.dialogModal.openDialog(selectedDate); // selectedDate 전달
+      console.log(this.selectedDate);
     },
   },
 };

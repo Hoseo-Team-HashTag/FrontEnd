@@ -23,7 +23,7 @@
             ></v-toolbar>
             <v-card-text>
               <div id="modal" class="text-h4 pa-4 rounded-lg">
-                <p>선택한 날짜: {{ formatDate(selectedDate) }}</p>
+                <p>선택한 날짜: {{ selectedDate }}</p>
                 <input
                   id="modal__item"
                   type="text"
@@ -73,25 +73,26 @@ export default {
     };
   },
   methods: {
-    openDialog() {
+    openDialog(selectedDate) {
       this.dialog = true;
-    },
-    formatDate(date) {
-      if (!date) {
-        return '날짜를 선택하세요';
-      }
-
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      const formattedDate = new Date(date).toLocaleDateString('ko-KR', options);
-      return formattedDate;
+      this.selectedDate = selectedDate; // selectedDate 할당
     },
 
     saveEvent() {
+      const selectedDate = this.selectedDate
+        ? new Date(this.selectedDate)
+        : null;
+      const year = selectedDate.getFullYear();
+      const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
+      const day = selectedDate.getDate().toString().padStart(2, '0');
+      const formattedDate = `${year}-${month}-${day}`;
+
       const event = {
-        date: this.selectedDate ? new Date(this.selectedDate) : null,
+        date: formattedDate,
         title: this.title,
         memo: this.memo,
       };
+
       console.log('Event:', event);
       this.dialog = false;
     },
