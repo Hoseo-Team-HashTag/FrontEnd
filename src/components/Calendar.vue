@@ -40,8 +40,15 @@
               'has-text-success': isToday(weekIndex, dayIndex),
               'has-text-link': isSaturday(dayIndex),
               'has-text-danger': isSunday(dayIndex),
+              'no-modal':
+                isLastMonthDay(weekIndex, dayIndex) ||
+                isNextMonthDay(weekIndex, dayIndex),
             }"
-            @click="openDialog(date)"
+            @click="
+              !isLastMonthDay(weekIndex, dayIndex) &&
+                !isNextMonthDay(weekIndex, dayIndex) &&
+                openDialog(date)
+            "
           >
             {{ date }}
           </td>
@@ -174,14 +181,21 @@ export default {
     isSunday(dayIndex) {
       return dayIndex === 0;
     },
+    // openDialog(date) {
+    //   const selectedDate = new Date(this.year, this.month - 1, date);
+    //   const year = selectedDate.getFullYear();
+    //   const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
+    //   const day = selectedDate.getDate().toString().padStart(2, '0');
+    //   this.selectedDate = `${year}-${month}-${day}`;
+    //   this.$refs.dialogModal.openDialog(selectedDate); // selectedDate 전달
+    //   console.log(this.selectedDate);
+    // },
     openDialog(date) {
-      const selectedDate = new Date(this.year, this.month - 1, date);
-      const year = selectedDate.getFullYear();
-      const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
-      const day = selectedDate.getDate().toString().padStart(2, '0');
-      this.selectedDate = `${year}-${month}-${day}`;
-      this.$refs.dialogModal.openDialog(selectedDate); // selectedDate 전달
-      console.log(this.selectedDate);
+      const selectedDate = new Date(this.year, this.month - 1, date + 1);
+      const formattedDate = selectedDate.toISOString().split('T')[0]; // 날짜를 yyyy-mm-dd 형식으로 변환
+      this.selectedDate = formattedDate;
+      this.$refs.dialogModal.openDialog(formattedDate);
+      console.log(formattedDate);
     },
   },
 };
