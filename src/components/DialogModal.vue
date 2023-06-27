@@ -4,55 +4,45 @@
       <v-dialog
         v-model="dialog"
         transition="dialog-bottom-transition"
-        width="auto"
+        width="40%"
+        max-width="600px"
+        min-width="400px"
       >
         <template v-slot:activator="{ on }">
-          <v-btn
+          <!-- vuetify3.x 버전은 베타버전이라 date-picker가 없음, 추후 개발 예정 -->
+          <!-- <v-btn
             class="dialog__addBtn"
             color="var(--color-nav-green)"
             v-on="on"
           >
             일정추가
-          </v-btn>
+          </v-btn> -->
         </template>
         <template v-slot:default="{ isActive }">
           <v-card class="rounded-lg">
-            <v-toolbar
-              color="var(--color-nav-green)"
-              title="일정 추가"
-            ></v-toolbar>
+            <v-toolbar color="var(--color-nav-green)" flat>
+              <v-toolbar-title class="white--text">일정 추가</v-toolbar-title>
+            </v-toolbar>
             <v-card-text>
               <div id="modal" class="text-h4 pa-4 rounded-lg">
                 <p>선택한 날짜: {{ selectedDate }}</p>
-                <input
-                  id="modal__item"
-                  type="text"
+                <v-text-field
                   v-model="title"
-                  placeholder="제목"
+                  label="제목"
+                  outlined
                   style="width: 100%"
-                /><br />
-                <input
-                  id="modal__item"
-                  class="text-h5"
-                  type="text"
+                ></v-text-field>
+                <v-text-field
                   v-model="memo"
-                  placeholder="일정 메모"
+                  label="일정 메모"
+                  outlined
                   style="width: 100%"
-                />
+                ></v-text-field>
               </div>
             </v-card-text>
             <v-card-actions class="justify-end">
-              <v-btn color="grey" variant="text" @click="dialog = false">
-                취소
-              </v-btn>
-              <v-btn
-                id="modal__btn"
-                color="black"
-                variant="text"
-                @click="saveEvent"
-              >
-                저장
-              </v-btn>
+              <v-btn color="grey" text @click="dialog = false"> 취소 </v-btn>
+              <v-btn color="black" text @click="saveEvent"> 저장 </v-btn>
             </v-card-actions>
           </v-card>
         </template>
@@ -60,7 +50,6 @@
     </v-col>
   </v-row>
 </template>
-
 <script>
 export default {
   name: 'DialogModal',
@@ -75,9 +64,8 @@ export default {
   methods: {
     openDialog(selectedDate) {
       this.dialog = true;
-      this.selectedDate = selectedDate; // selectedDate 할당
+      this.selectedDate = selectedDate;
     },
-
     saveEvent() {
       const selectedDate = this.selectedDate
         ? new Date(this.selectedDate)
@@ -105,7 +93,6 @@ export default {
   },
 };
 </script>
-
 <style lang="scss" scoped>
 #modal {
   //   background-color: var(--color-light-white);
