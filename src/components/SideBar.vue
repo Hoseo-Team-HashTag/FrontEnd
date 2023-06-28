@@ -3,8 +3,8 @@
     <v-list>
       <v-list-item
         prepend-icon="mdi:mdi-account-circle"
-        title="Guest"
-        subtitle="guest001@gmail.com"
+        :title="userName || 'Guest'"
+        :subtitle="userEmail || 'guest001@gmail.com'"
       ></v-list-item>
     </v-list>
 
@@ -36,6 +36,10 @@ export default {
   name: 'SideBar',
   components: {
     // DialogModal,
+  },
+  props: {
+    userName: String,
+    userEmail: String,
   },
   data() {
     return {

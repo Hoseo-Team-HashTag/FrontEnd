@@ -34,7 +34,11 @@
       </v-app-bar>
 
       <!-- router view -->
-      <router-view />
+      <router-view
+        :userName="userName"
+        :userEmail="userEmail"
+        @update-user="updateUser"
+      />
     </v-main>
   </v-app>
 </template>
@@ -42,6 +46,12 @@
 <script>
 import 'bulma/css/bulma.css';
 export default {
+  data() {
+    return {
+      userName: '',
+      userEmail: '',
+    };
+  },
   computed: {
     isLoggedIn() {
       return sessionStorage.getItem('accessToken') !== null;
@@ -51,6 +61,10 @@ export default {
     logOut() {
       sessionStorage.removeItem('accessToken');
       this.$router.push('/');
+    },
+    updateUser(user) {
+      this.userName = user.userName;
+      this.userEmail = user.userEmail;
     },
   },
 };

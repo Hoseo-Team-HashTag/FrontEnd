@@ -11,7 +11,8 @@
           로그인 또는 <a href="/SignUp" class="">등록</a><br />
           <input
             id="userEmail"
-            v-model="userEmail"
+            :value="userEmail"
+            @input="$emit('update:userEmail', $event.target.value)"
             type="text"
             placeholder="이메일 주소"
             class="loginForm__text"
@@ -64,6 +65,22 @@ export default {
       userPW: '',
       loginErrorMsg: '',
     };
+  },
+  props: {
+    userName: {
+      type: String,
+      required: true,
+    },
+    userEmail: {
+      type: String,
+      required: true,
+    },
+  },
+  mounted() {
+    this.$emit('update-user', {
+      userName: this.userName,
+      userEmail: this.userEmail,
+    });
   },
   computed: {
     emailValid() {
