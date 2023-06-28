@@ -109,15 +109,13 @@ export default {
     checkForm() {
       axios
         .post('http://127.0.0.1:3000/token/loginSuccess', {
-          accessToken: this.accessToken,
-          refreshToken: this.refreshToken,
+          accessToken: sessionStorage.getItem('accessToken'),
         })
         .then(res => {
           if (res.data.tokenResult == 1) {
             alert('토큰에 이상이있음(유효기간 만료 혹은 올바르지 않은 토큰)');
           } else if (res.data.tokenResult == 0) {
-            alert('문제없음', this.userEmail);
-            sessionStorage.getItem('accessToken');
+            alert('문제없음' + res.data.userEmail + '/' + res.data.userName);
           } else {
             alert('backend err');
           }
