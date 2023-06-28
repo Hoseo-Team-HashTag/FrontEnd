@@ -98,6 +98,7 @@ export default {
 
               alert('로그인 성공');
               this.$router.push('/Calendar');
+              window.location.reload();
             } else if (res.data.loginResult == -1) {
               alert('backend error: SQL err');
             } else {
