@@ -33,6 +33,14 @@
           >
             로그인
           </button>
+          <br />
+          <button
+            class="loginForm__button"
+            value="로그인확인"
+            @click.prevent="checkForm()"
+          >
+            로그인 확인
+          </button>
           <p v-if="loginErrorMsg" class="loginForm__error">
             {{ loginErrorMsg }}
           </p>
@@ -97,6 +105,23 @@ export default {
             }
           });
       }
+    },
+    checkForm() {
+      axios
+        .post('http://127.0.0.1:3000/token/loginSuccess', {
+          accessToken: this.accessToken,
+          refreshToken: this.refreshToken,
+        })
+        .then(res => {
+          if (res.data.tokenResult == 1) {
+            alert('토큰에 이상이있음(유효기간 만료 혹은 올바르지 않은 토큰)');
+          } else if (res.data.tokenResult == 0) {
+            alert('문제없음', this.userEmail);
+            sessionStorage.getItem('accessToken');
+          } else {
+            alert('backend err');
+          }
+        });
     },
   },
 };
