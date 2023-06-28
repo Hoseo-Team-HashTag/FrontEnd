@@ -28,7 +28,7 @@
   </v-app>
 </template>
 
-<script setup>
+<script>
 import 'bulma/css/bulma.css';
 </script>
 

@@ -82,6 +82,12 @@ export default {
               this.loginErrorMsg = '비밀번호가 틀렸습니다';
               this.userPW = '';
             } else if (res.data.loginResult == 0) {
+              // 로그인 성공 시 accessToken과 refreshToken 저장
+              const accessToken = res.data.accessToken;
+              const refreshToken = res.data.refreshToken;
+              sessionStorage.setItem('accessToken', accessToken);
+              sessionStorage.setItem('refreshToken', refreshToken);
+
               alert('로그인 성공');
               this.$router.push('/Calendar');
             } else if (res.data.loginResult == -1) {
