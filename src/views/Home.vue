@@ -66,6 +66,7 @@ export default {
       loginErrorMsg: '',
     };
   },
+<<<<<<< HEAD
   props: {
     userName: {
       type: String,
@@ -81,6 +82,19 @@ export default {
       userName: this.userName,
       userEmail: this.userEmail,
     });
+=======
+  created() {
+    axios
+      .post('http://127.0.0.1:3000/token/loginSuccess', {
+        accessToken: sessionStorage.getItem('accessToken'),
+      })
+      .then(res => {
+        if (res.data.tokenResult == 0) {
+          this.$router.push('/Calendar');
+          window.location.reload();
+        }
+      });
+>>>>>>> feature/test
   },
   computed: {
     emailValid() {

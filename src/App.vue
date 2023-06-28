@@ -62,10 +62,9 @@ export default {
       sessionStorage.removeItem('accessToken');
       this.$router.push('/');
       window.location.reload();
-    },
-    updateUser(user) {
-      this.userName = user.userName;
-      this.userEmail = user.userEmail;
+<<<<<<< HEA
+=======
+>>>>>>> feature/test
     },
   },
 };

@@ -65,6 +65,9 @@ export default {
     openDialog(selectedDate) {
       this.dialog = true;
       this.selectedDate = selectedDate;
+
+      this.title = ''; // 제목 초기화
+      this.memo = ''; // 일정 메모 초기화
     },
     saveEvent() {
       const selectedDate = this.selectedDate
@@ -83,6 +86,9 @@ export default {
 
       console.log('Event:', event);
       this.dialog = false;
+
+      this.title = ''; // 제목 초기화
+      this.memo = ''; // 일정 메모 초기화
     },
   },
   props: {
