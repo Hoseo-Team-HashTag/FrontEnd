@@ -62,9 +62,6 @@ export default {
       sessionStorage.removeItem('accessToken');
       this.$router.push('/');
       window.location.reload();
-<<<<<<< HEA
-=======
->>>>>>> feature/test
     },
   },
 };
