@@ -12,11 +12,19 @@
           <span class="happytime__title">HappyTime</span>
         </v-app-bar-title>
         <v-spacer>
-          <router-link to="/" class="navbar__menu__item">Home</router-link>
-          <router-link to="/Calendar" class="navbar__menu__item"
+          <router-link v-if="!isLoggedIn" to="/" class="navbar__menu__item"
+            >Home</router-link
+          >
+          <router-link
+            v-if="isLoggedIn"
+            to="/Calendar"
+            class="navbar__menu__item"
             >Calendar</router-link
           >
-          <router-link to="/SignUp" class="navbar__menu__item"
+          <router-link
+            v-if="!isLoggedIn"
+            to="/SignUp"
+            class="navbar__menu__item"
             >SignUp</router-link
           >
           <button v-if="isLoggedIn" class="navbar__menu__item" @click="logOut">
