@@ -19,7 +19,9 @@
           <router-link to="/SignUp" class="navbar__menu__item"
             >SignUp</router-link
           >
-          <button class="navbar__menu__item" @click="logOut">Log Out</button>
+          <button v-if="isLoggedIn" class="navbar__menu__item" @click="logOut">
+            Log Out
+          </button>
         </v-spacer>
       </v-app-bar>
 
@@ -32,6 +34,11 @@
 <script>
 import 'bulma/css/bulma.css';
 export default {
+  computed: {
+    isLoggedIn() {
+      return sessionStorage.getItem('accessToken') !== null;
+    },
+  },
   methods: {
     logOut() {
       sessionStorage.removeItem('accessToken');
