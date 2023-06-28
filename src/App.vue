@@ -61,6 +61,7 @@ export default {
     logOut() {
       sessionStorage.removeItem('accessToken');
       this.$router.push('/');
+      window.location.reload();
     },
     updateUser(user) {
       this.userName = user.userName;
