@@ -19,6 +19,7 @@
           <router-link to="/SignUp" class="navbar__menu__item"
             >SignUp</router-link
           >
+          <button class="navbar__menu__item" @click="logOut">Log Out</button>
         </v-spacer>
       </v-app-bar>
 
@@ -30,6 +31,14 @@
 
 <script>
 import 'bulma/css/bulma.css';
+export default {
+  methods: {
+    logOut() {
+      sessionStorage.removeItem('accessToken');
+      this.$router.push('/');
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
