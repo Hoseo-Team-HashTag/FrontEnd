@@ -86,7 +86,6 @@ export default {
     // 로그인이 필요하지 않은 페이지(메인(로그인화면),회원가입 등)에 로그인이 된 상태로 접근
     if (sessionStorage.getItem('accessToken') == null) {
       this.$router.push('/');
-      window.location.reload();
     }
     const date = new Date();
     this.currentYear = date.getFullYear();

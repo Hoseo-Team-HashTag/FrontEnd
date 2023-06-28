@@ -77,7 +77,6 @@ export default {
       .then(res => {
         if (res.data.tokenResult == 0) {
           this.$router.push('/Calendar');
-          window.location.reload();
         }
       });
   },

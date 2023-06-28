@@ -66,6 +66,7 @@ export default {
     };
   },
   created() {
+    // 로그인이 필요한 페이지에 비정상 접근
     axios
       .post('http://127.0.0.1:3000/token/loginSuccess', {
         accessToken: sessionStorage.getItem('accessToken'),
@@ -73,7 +74,6 @@ export default {
       .then(res => {
         if (res.data.tokenResult == 0) {
           this.$router.push('/Calendar');
-          window.location.reload();
         }
       });
   },
