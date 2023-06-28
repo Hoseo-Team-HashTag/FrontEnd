@@ -51,7 +51,6 @@ export default {
     logOut() {
       sessionStorage.removeItem('accessToken');
       this.$router.push('/');
-      window.location.reload();
     },
   },
 };

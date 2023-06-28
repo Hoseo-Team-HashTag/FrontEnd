@@ -66,23 +66,6 @@ export default {
       loginErrorMsg: '',
     };
   },
-<<<<<<< HEAD
-  props: {
-    userName: {
-      type: String,
-      required: true,
-    },
-    userEmail: {
-      type: String,
-      required: true,
-    },
-  },
-  mounted() {
-    this.$emit('update-user', {
-      userName: this.userName,
-      userEmail: this.userEmail,
-    });
-=======
   created() {
     axios
       .post('http://127.0.0.1:3000/token/loginSuccess', {
@@ -91,10 +74,8 @@ export default {
       .then(res => {
         if (res.data.tokenResult == 0) {
           this.$router.push('/Calendar');
-          window.location.reload();
         }
       });
->>>>>>> feature/test
   },
   computed: {
     emailValid() {
