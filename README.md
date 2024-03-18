@@ -1,6 +1,10 @@
+# pages
+![11](https://github.com/Hoseo-Team-HashTag/FrontEnd/assets/86218573/c0af38ed-bb35-4b75-93f6-43768ef3f5b5)
+![21](https://github.com/Hoseo-Team-HashTag/FrontEnd/assets/86218573/aa18f2a3-fe9b-4f4a-a0d4-55d21244a7d0)
+
 # base
 - ( = ) 좌측 위 메뉴 토클버튼 활용
-
+- 
 ## * Project setup
 
 ### 주의사항
