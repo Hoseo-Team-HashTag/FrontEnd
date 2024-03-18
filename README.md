@@ -1,5 +1,6 @@
 # pages
 ![11](https://github.com/Hoseo-Team-HashTag/FrontEnd/assets/86218573/c0af38ed-bb35-4b75-93f6-43768ef3f5b5)
+![14](https://github.com/Hoseo-Team-HashTag/FrontEnd/assets/86218573/9bff05e4-ee9f-461e-8f06-c85f7564a012)
 ![21](https://github.com/Hoseo-Team-HashTag/FrontEnd/assets/86218573/aa18f2a3-fe9b-4f4a-a0d4-55d21244a7d0)
 
 # base
