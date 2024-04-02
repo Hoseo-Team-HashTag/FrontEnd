@@ -3,6 +3,18 @@
 ![14](https://github.com/Hoseo-Team-HashTag/FrontEnd/assets/86218573/9bff05e4-ee9f-461e-8f06-c85f7564a012)
 ![21](https://github.com/Hoseo-Team-HashTag/FrontEnd/assets/86218573/aa18f2a3-fe9b-4f4a-a0d4-55d21244a7d0)
 
+# 팀 역할
+### 프론트엔드: 양정현 (Me)
+### 백엔드: 박성문
+### 데이터베이스: 김지민
+
+## Front-end
+- Vue.js
+- Vuetify
+- Vite
+- Bulmacss
+- 프론트엔드 전체
+
 # base
 - ( = ) 좌측 위 메뉴 토클버튼 활용
 - 
