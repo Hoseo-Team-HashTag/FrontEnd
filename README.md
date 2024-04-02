@@ -10,10 +10,10 @@
 
 ## Front-end
 - Vue.js
-- Vuetify
+- Vuetify(SideBar)
 - Vite
-- Bulmacss
-- 프론트엔드 전체
+- Bulmacss(Calendar 에만 적용)
+- Home BackgroundImage -> Canva에서 자체제작
 
 # base
 - ( = ) 좌측 위 메뉴 토클버튼 활용
